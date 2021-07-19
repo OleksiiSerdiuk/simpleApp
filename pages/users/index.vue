@@ -2,40 +2,50 @@
   <section>
     <h1>Users</h1>
 
-    <multiselect v-model="value" :options="options"></multiselect>
+    <base-multiselect
+      :value="valueSelect"
+      :options="options"
+      searchable
+      label="name"
+      :loading="isLoading"
+      :search-change="asyncFind"
+    />
 
-    <ul>
-      <li v-for="user in 5" :key="user">
-        <a href="#" @click.prevent="openUser(user)">
-          User {{ user }}
-        </a>
-      </li>
-    </ul>
+    <list-players />
   </section>
 </template>
 
 <script>
-  import { ref } from '@nuxtjs/composition-api';
+import { ref, useContext, computed } from '@nuxtjs/composition-api';
 
-  export default {
-    name: 'Users',
-    setup(_, { root }) {
-      const value = ref(null);
-      const options = ref([
-        'list',
-        'of',
-        'options'
-      ]);
+export default {
+  name: 'Users',
+  setup(_, { root }) {
+    const { store } = useContext();
+    const valueSelect = ref(null);
+    const options = computed(() => store.state.users?.usersList);
+    const isLoading = ref(false);
 
-      const openUser = (user) => {
-        root.$router.push('/users/' + user);
-      };
+    // const openUser = (user) => {
+    //   root.$router.push('/users/' + user);
+    // };
 
-      return {
-        openUser,
-        value,
-        options,
+
+    const asyncFind = async(query) => {
+      if(query.length > 3) {
+        console.log('query', query);
+        isLoading.value = true;
+        await store.dispatch('users/GET_USERS', query);
+        isLoading.value = false;
       }
-    },
-  }
+    }
+
+    return {
+      valueSelect,
+      options,
+      asyncFind,
+      isLoading,
+    }
+  },
+}
 </script>
