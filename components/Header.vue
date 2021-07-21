@@ -10,10 +10,10 @@
     >
       <ul class="nav">
         <li>
-          <nuxt-link exact no-prefetch active-class="active" class="item-nav" to="/">Home</nuxt-link>
+          <nuxt-link no-prefetch class="item-nav" to="/">Home</nuxt-link>
         </li>
         <li>
-          <nuxt-link active-class="active" class="item-nav"  to="/users">Users</nuxt-link>
+          <nuxt-link class="item-nav"  to="/users">Users</nuxt-link>
         </li>
       </ul>
     </b-navbar>

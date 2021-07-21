@@ -45,8 +45,4 @@ export default {
       grid-template-columns: 60px 1fr repeat(2, minmax(150px, 300px));
     }
   }
-
-  .color-red {
-    color: red;
-  }
 </style>

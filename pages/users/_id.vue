@@ -1,8 +1,8 @@
 <template>
   <section>
-    <NuxtLink to="/users">
+    <nuxt-link to="/users">
       Return to user search
-    </NuxtLink>
+    </nuxt-link>
     <h1 class="mt-2">User {{ $route.params.id }}</h1>
 
     <div v-if="dataUser" class="mt-3">
