@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <multiselect
-      v-model="value"
-      :options="options"
-      :searchable="true"
-      label="name"
-      :loading="loading"
-      @search-change="searchChange"
-    />
-  </div>
+  <multiselect
+    :value="value"
+    :options="options"
+    :searchable="true"
+    :label="label"
+    :loading="loading"
+    @search-change="searchChange"
+    @select="$emit('select', $event)"
+    @input="$emit('input', $event)"
+  />
 </template>
 
 <script>

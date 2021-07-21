@@ -13,9 +13,6 @@
           <nuxt-link exact no-prefetch active-class="active" class="item-nav" to="/">Home</nuxt-link>
         </li>
         <li>
-          <nuxt-link active-class="active" class="item-nav"  to="/about">About</nuxt-link>
-        </li>
-        <li>
           <nuxt-link active-class="active" class="item-nav"  to="/users">Users</nuxt-link>
         </li>
       </ul>
