@@ -2,7 +2,7 @@
   <multiselect
     :value="value"
     :options="options"
-    :searchable="true"
+    :searchable="searchable"
     :label="label"
     :loading="loading"
     @search-change="searchChange"
