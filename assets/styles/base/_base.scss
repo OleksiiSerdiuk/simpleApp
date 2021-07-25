@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-weight: 500;
+  box-sizing: border-box;
+  color: var(--color-dark);
+  line-height: normal;
+}
+
+.container-content {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
