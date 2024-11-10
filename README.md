@@ -3,6 +3,7 @@
 ## Build Setup
 
 ```bash
+# Node v14
 # install dependencies
 $ yarn install
 
